@@ -1,5 +1,4 @@
 function getHtmlBodyRegistro(message) {
-    console.log(message);
     const profesion = message.profesion === "Estudiante" ? "" : message.profesion || "";
     return `
     <!DOCTYPE html>

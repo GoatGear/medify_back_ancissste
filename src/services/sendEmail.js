@@ -6,7 +6,7 @@ export const sendEmail = async ({ to, subject, html }) => {
     try {
 
         const response = await resend.emails.send({
-            from: "ANCISSTE <ancissste@medifyevents.com.mx>",
+            from: "ANCISSSTE <ancissste@medifyevents.com.mx>",
             to,
             subject,
             html  
