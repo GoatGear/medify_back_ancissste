@@ -61,7 +61,7 @@ const validateCupon = async (data) => {
             message: "Cupón válido"
         };
     } catch (error) {
-        throw error;
+        throw new ErrorInstance(400, "Error en cupón: " + error.statusCode);
     }
 };
 

@@ -6,7 +6,6 @@ const adminCupones = (req, res) => {
 }
 
 const getCupones = asyncMiddleware(async (req, res) => {
-    console.log(req.params, 'id controlador')
     res.json(await cuponModel.getCupones(req.body, req.params));
 });
 
