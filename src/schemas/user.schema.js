@@ -6,11 +6,13 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      set: v => v.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())
     },
     apellido: {
       type: String,
       required: true,
       trim: true,
+      set: v => v.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())
     },
     profesion: {
       type: String,

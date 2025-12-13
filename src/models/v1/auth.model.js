@@ -27,7 +27,6 @@ const createUser = async (data) => {
             password: passwordHash
         });
 
-
         const userSaved = await newUser.save();
 
         const token = jwtUtils.generateToken({
