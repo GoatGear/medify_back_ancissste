@@ -1,4 +1,5 @@
 import { ErrorInstance } from '../../config/error.config.js';
+import { generarAsistenciasPorEvento } from "../../utils/asistencias.js";
 import { sendEmail } from '../../services/sendEmail.js';
 import getHtmlBodyReservacion from '../../services/html/reservacion.html.js';
 import Reservation from '../../schemas/reservations.schema.js';
@@ -42,10 +43,13 @@ const createReservation = async (data) => {
             metodo = "cupon";  // ✔ ENUM válido
         }
 
+        const asistencias = generarAsistenciasPorEvento(eventFound);
+
         const reservationData = {
             user,
             event,
             codigo_checkin,
+            asistencias,
             pago: {
                 metodo_pago: metodo,
                 pago_realizado: false,
